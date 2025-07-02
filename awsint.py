@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 
 # Step 1: Create the Flask app instance
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Step 2: Connect to DynamoDB
 dynamodb = boto3.resource('dynamodb', region_name='ap-south-1')  # Replace with your region
@@ -57,5 +57,5 @@ def show_photographers():
                            photographers=photographers,
                            availability_data=availability_data)
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
