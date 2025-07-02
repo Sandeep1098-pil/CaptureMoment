@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Bookings</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+  background: url(/static/images/back2.jpg) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* black tint over background */
+  z-index: 0;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.booking-card {
+  background: rgb(235,235, 235,0.2);
+  border-radius: 12px;
+  width: 250px;
+  padding: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.booking-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.booking-card h3,
+.booking-card p {
+  color: #fff;
+}
+
+.booking-card h3 {
+  font-size: 18px;
+  margin: 12px 0 10px;
+}
+
+.booking-card p {
+  font-size: 14px;
+  margin: 13px 0;
+}
+
+.book-btn, .back-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(0, 123, 255, 0.7);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.book-btn:hover, .back-link:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.back-link {
+  margin: 30px auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+  </style>
+</head>
+<body>
+<div class="background-overlay"></div>
+  <h2 style="color: white;">Your Bookings</h2>
+
+  <div class="card-container">
+    {% for booking in bookings %}
+      <div class="booking-card">
+        <img src="{{ url_for('static', filename='images/' ~ booking.Image) }}" alt="{{ booking.name }}">
+        <h3>{{ booking.name }}</h3>
+        <p><strong>ID:</strong> {{ booking.id }}</p>
+        <p><strong>Date Booked:</strong> {{ booking["Date-booked"] }}</p>
+        <a href="/book" class="book-btn">Book Again</a>
+      </div>
+    {% else %}
+      <p>No bookings found.</p>
+    {% endfor %}
+  </div>
+
+  <a href="/home" class="back-link">Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Capture Moments</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      background: url('/static/images/back1.jpg') no-repeat center center/cover;
+      color: white;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logout-btn , .contact-btn,.info-btn {
+      background: #4CAF50;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      
+    }
+
+    .logout-btn:hover,.contact-btn:hover,.info-btn:hover {
+      background: #d32f2f;
+      
+    }
+
+    .sections-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 24px;
+      width: 100%;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      flex: 1 1 250px; /* Flexible width */
+      max-width: 370px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 0;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #2196F3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0b7dda;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+        <div class="navbar">
+       <h1>📸 Welcome To Capture Moments</h1>
+
+        <div class="nav-buttons">
+           <a href="/about" class="info-btn">About us</a>
+          <a href="/contact" class="contact-btn">Contact Us</a>
+          <a href="/logout" class="logout-btn">Logout</a>
+         
+        </div>
+      </div>
+
+      
+    <div class="sections-row">
+      <div class="section">
+        <h2>View Photographers</h2>
+        <a href="/show-photographers" class="btn">Browse</a>
+      </div>
+      <div class="section">
+        <h2>Give Review</h2>
+        <a href="/review" class="btn">Review</a>
+      </div>
+      <div class="section">
+        <h2>Your Bookings</h2>
+        <a href="/bookings" class="btn">View</a>
+      </div>
+      
+     
+    </div>
+  </div>
+</body>
+</html>

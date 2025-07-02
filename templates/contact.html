@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Card Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+        .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-items: stretch; /* Ensures equal height for cards */
+      padding: 30px;
+      max-width: 1000px;
+    }
+
+    .card {
+      flex: 1 1 250px;        /* Flexible width */
+      max-width: 300px;
+      min-height: 200px;      /* Optional: ensures a base height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centers content vertically */
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .card p, .card a {
+      font-size: 16px;
+      color: #555;
+      margin: 8px 0 0;
+    }
+
+    .card a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body style="background: linear-gradient(135deg, #e0e7ff 0%, #fffde4 100%);">
+    <div class="container">
+      <div class="card">
+        <h2><span class="emoji">📧</span> Email</h2>
+        <p><a href="mailto:sandeepnelakurthi770@gmail.com" style="text-decoration: none;""> <span class="emoji">✉️</span> sandeepnelakurthi770@gmail.com</a></p>
+      </div>
+      <div class="card">
+        <h2><span class="emoji">📞</span> Phone</h2>
+        <p><a href="tel:+919440461098" style="text-decoration: none;"><span class="emoji">📱</span> +91 94404 61098</a></p>
+      </div>
+      <div class="card">
+        <h2><span class="emoji">📍</span> Address</h2>
+        <p><span class="emoji">🏠</span> DS Nagar, 9<sup>th</sup> Line, Guntur, Andhra Pradesh, India</p>
+      </div>
+    </div>
+</body>
+</html>

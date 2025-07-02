@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #fff;
+      text-align: justify;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      background-image: url('/static/images/him.jpeg'); /* Update path as needed */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 30px;
+      text-align: center;
+    }
+
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 800px;
+    }
+
+    .hero-title {
+      font-size: 3em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    .hero-content p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .features-inline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .feature-btn {
+      background-color: #ffffff22;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      backdrop-filter: blur(3px);
+      transition: transform 0.2s ease;
+    }
+
+    .feature-btn:hover {
+      transform: scale(1.05);
+      background-color: #ffffff33;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2em;
+      }
+
+      .hero-content p {
+        font-size: 1em;
+      }
+
+      .hero-overlay {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full Hero Section with Background and Content -->
+  <section class="hero-section">
+    <div class="hero-overlay">
+      <h1 class="hero-title">About Us</h1>
+      <div class="hero-content">
+        <p>📸 Capture Moments is a photography service platform dedicated to helping clients discover 
+          and book skilled photographers for their special occasions. Whether it’s a wedding, birthday, 
+          pre-wedding shoot, baby shower, or any life milestone — we connect you with the perfect visual 
+          storyteller. Our photographers create a comfortable, engaging environment and pay close attention 
+          to detail, lighting, and composition to deliver not just photos, but memories.</p>
+      </div>
+      <div class="features-inline">
+        <div class="feature-btn">Creative Vision</div>
+        <div class="feature-btn">Friendly & Professional</div>
+        <div class="feature-btn">Punctual & Reliable</div>
+        <div class="feature-btn">Award-Winning Talent</div>
+        <div class="feature-btn">Customer-Focused</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
