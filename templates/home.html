@@ -4,32 +4,75 @@
     <title>Capture Moments</title>
     <style>
         body {
-            font-family: Arial;
-            background: linear-gradient(to right, #2c3e50, #3498db);
-            color: white;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
             text-align: center;
-            padding-top: 100px;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.8)),
+                        url('/static/images/back1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+
         h1 {
-            font-size: 3em;
+            font-size: 4em;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
+
+        p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            color: #ecf0f1;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
         a.button {
-            background: white;
-            color: black;
-            padding: 15px 30px;
-            margin: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #2c3e50;
+            padding: 16px 40px;
+            margin: 12px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 14px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
+
         a.button:hover {
-            background-color: yellow;
-            color: black;
+            background-color: #f39c12;
+            color: #fff;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            a.button {
+                padding: 12px 28px;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <h1>Capture Moments</h1>
-    <p>Your go to platform for booking Photographers!</p>
+    <p>Your go-to platform for booking top photographers and capturing your best memories!</p>
     <a href="/book" class="button">Book a Photographer</a>
     <a href="/show-photographers" class="button">View Photographers</a>
 </body>
