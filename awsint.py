@@ -7,7 +7,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Step 2: Connect to DynamoDB
-dynamodb = boto3.resource('dynamodb', region_name='ap-south-1')  # Replace with your region
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1')  # Replace with your region
 
 # Tables
 photographers_table = dynamodb.Table('photographers')
@@ -57,5 +57,5 @@ def show_photographers():
                            photographers=photographers,
                            availability_data=availability_data)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+if __name__ == '_main_':
+    app.run(host='0.0.0.0', port=5000, debug=True) 
