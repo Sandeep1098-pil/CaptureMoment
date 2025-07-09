@@ -3,13 +3,13 @@ from flask import Flask, flash, render_template, request, redirect, url_for,sess
 app = Flask(__name__)
 app.secret_key = 'Sand110'
 
-# Dummy login users
+
 users = {
     "admin": "pass",
     "demo": "tusa"
 }
 
-# Dummy photographer data
+
 photographers = [
     {"id": "p1", "name": "Amit Lensman", "skills": ["Wedding", "Portrait"], "image": "amit.jpg"},
     {"id": "p2", "name": "Sana Clickz", "skills": ["Fashion", "Event"], "image": "sana.jpg"},
@@ -18,7 +18,7 @@ photographers = [
     
 ]
 
-# Dummy availability data
+
 availability_data = {
     "p1": ["2025-06-20", "2025-06-23"],
     "p2": ["2025-06-19", "2025-06-22"],
@@ -54,21 +54,21 @@ def submit_review():
     name = request.form["photographer_name"]
     pid = request.form["photographer_id"]
     rating = request.form["rating"]
-    # Process/store data here
+  
     return f"Review submitted for {name} (ID: {pid}) with {rating} stars!"
 
 
-# Route: Logout (just redirects)
+
 @app.route('/logout')
 def logout():
     return redirect(url_for('login'))
 
-# Route: Signup Page
+
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
 
-# Route: Home Page (no session needed)
+
 @app.route('/home')
 def home():
     return render_template('home.html')
@@ -89,28 +89,23 @@ def show_photographers():
 
 @app.route('/reset')
 def reset():
-    session.clear()  # Correct syntax to clear session
+    session.clear()  
     return redirect(url_for('login'))
-
-
-  
-@app.route('/bookings')
-def show_bookings():
-    user_bookings = [
-        {"id": "p4", "name": "Aditya", "Date-booked": "29-8-2025","Image":"aditya.jpg"},
-        {"id": "p3", "name": "Sana", "Date-booked": "26-7-2025","Image":"sana.jpg"}
-    ]
-    return render_template('bookings.html', bookings=user_bookings)
-
-# Route: Book Photographer
-@app.route('/book', methods=['GET', 'POST'])
-def book():
+@app.route('/book', methods=['GET','POST'])
+def book_photographer():
     if request.method == 'POST':
-        photographer_id = request.form.get('photographer_id')
-        date = request.form.get('date')
-        return f"<h2 style='color:green'>Booking Confirmed! For {photographer_id} on {date}.</h2>"
+        photographer_id = request.form['photographer_id']
+        user_id         = request.form['user_id']
+        date            = request.form['date']
+        
+        return redirect(url_for('booking_success')) 
+    return render_template('book.html')
 
-    return render_template('book.html', photographers=photographers)
+
+@app.route('/booking-success') 
+def booking_success():
+    return render_template('successful.html')  
+
 
 # Run the app
 if __name__ == '__main__':
