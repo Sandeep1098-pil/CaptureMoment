@@ -68,13 +68,16 @@
 </head>
 <body>
  
-  <form class="booking-form" method="POST">
-    <h2>📸 Book a Photographer</h2>
-    <input type="text" name="photographer_id" placeholder="Photographer ID" required>
-    <input type="text" name="user_id" placeholder="Your Username" required>
-    <input type="date" name="date" required>
-    <button type="submit">Book Now</button>
-  </form>
+<!-- book.html -->
+<form class="booking-form" method="POST" action="/book">
+  <h2>📸 Book a Photographer</h2>
+  <input type="text" name="photographer_id" placeholder="Photographer ID" required>
+  <input type="text" name="user_id"        placeholder="Your Username" required>
+  <input type="date" name="date"            required>
+  <button type="submit">Book Now</button>
+</form>
+
+
 
 </body>
 </html>
